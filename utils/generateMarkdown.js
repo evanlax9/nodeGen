@@ -1,6 +1,28 @@
 function generateMarkdown(data) {
   return `
-# ${data.title}
+  # Title
+# ${data.name}
+## Description
+${data.description}
+### Table of Contents
+${data.table}
+#### License
+${data.license}
+#### Installation
+${data.installation}
+#### Usage
+${data.usage}
+#### Contributing
+${data.contributing}
+#### Tests
+${data.tests}
+#### Questions
+${data.questions}
+#### Email
+${data.email}
+#### Avatar
+<br>
+![Avatar image](${data.avatar_url})
 
 `;
 }
