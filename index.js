@@ -12,6 +12,11 @@ const questions = [
         name: "githuberusername",
         message: "github username:",
     },
+    {
+        type: "input",
+        name: "project description:",
+        message: "project description:",
+    },
     // {
     //     type: "input",
     //     name: "email",
@@ -62,8 +67,14 @@ const questions = [
         name: "email",
         message: "user email:",
     },
+    {
+        type: "list",
+        name: "license",
+        message: "Licenses:",
+        choices: ["MIT"]
+    },
     // },
-    // {
+    // {4
     //     type: "input",
     //     name: "description",
     //     message: "short description:",
@@ -79,7 +90,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((responses) => {
         console.log(responses);
-        axios.get(`https://api.github.com/repos/evanlax9/Workday-Planner`).then(res => {
+        axios.get(`https://api.github.com/users/${responses.githuberusername}`).then(res => {
             // axios.get(`https://api.github.com/users/${responses.githuberusername}/repos?per_page=100`).then(res => {
             // const repo = res.data.find(r => r.name.toLowerCase() === "workday-planner")
             // // const repo = res.data.find(r => r.name.toLowerCase() === responses.title.toLowerCase())

@@ -21,7 +21,6 @@ ${data.questions}
 #### Email
 ${data.email}
 #### Avatar
-<br>
 ![Avatar image](${data.avatar_url})
 
 `;
