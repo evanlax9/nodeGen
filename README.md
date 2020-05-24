@@ -1,24 +1,24 @@
 
   # Title
-# Dmitry Karasik
+# Workday-Planner
 ## Description
-undefined
+Hour by hour planner to organize time
 ### Table of Contents
-kdkdkd
+
 #### License
-MIT
+
 #### Installation
 
 #### Usage
-dk
+
 #### Contributing
 
 #### Tests
-d
+
 #### Questions
 
 #### Email
 
 #### Avatar
-![Avatar image](https://avatars2.githubusercontent.com/u/50233?v=4)
-
+![Avatar image](https://avatars1.githubusercontent.com/u/62257610?v=4)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)]

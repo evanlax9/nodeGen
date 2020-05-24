@@ -21,8 +21,8 @@ ${data.questions}
 #### Email
 ${data.email}
 #### Avatar
-![Avatar image](${data.avatar_url})
-
+![Avatar image](${data.owner.avatar_url})
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)]
 `;
 }
 

@@ -9,14 +9,10 @@ const axios = require("axios");
 const questions = [
     {
         type: "input",
-        name: "githuberusername",
+        name: "githubusername",
         message: "github username:",
     },
-    {
-        type: "input",
-        name: "project description:",
-        message: "project description:",
-    },
+
     // {
     //     type: "input",
     //     name: "email",
@@ -68,10 +64,11 @@ const questions = [
         message: "user email:",
     },
     {
-        type: "list",
+        type: "input",
         name: "license",
         message: "Licenses:",
-        choices: ["MIT"]
+
+
     },
     // },
     // {4
@@ -90,19 +87,19 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((responses) => {
         console.log(responses);
-        axios.get(`https://api.github.com/users/${responses.githuberusername}`).then(res => {
-            // axios.get(`https://api.github.com/users/${responses.githuberusername}/repos?per_page=100`).then(res => {
-            // const repo = res.data.find(r => r.name.toLowerCase() === "workday-planner")
-            // // const repo = res.data.find(r => r.name.toLowerCase() === responses.title.toLowerCase())
-            // console.log(repo);
+        axios.get(`https://api.github.com/repos/${responses.githubusername}/${responses.title}`).then(res => {
             const md = generateMarkdown({ ...res.data, ...responses });
             console.log(res.data)
-            // const md = generateMarkdown(repo);
             writeToFile("readme.md", md);
-        })
+        }).catch(err => {
 
+            if (err.response.status === 404) console.log("Repo does not exist, check entry")
+        })
     })
 
 }
 
 init();
+
+// APi key
+// 6188e1212cec4719e7cef77fdca9d689c04e922f
